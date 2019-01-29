@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/first-Sleneium-Project.iml" filepath="$PROJECT_DIR$/.idea/modules/first-Sleneium-Project.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/first-Sleneium-Project_main.iml" filepath="$PROJECT_DIR$/.idea/modules/first-Sleneium-Project_main.iml" group="first-Sleneium-Project" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/first-Sleneium-Project_test.iml" filepath="$PROJECT_DIR$/.idea/modules/first-Sleneium-Project_test.iml" group="first-Sleneium-Project" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/second-selenium-project.iml" filepath="$PROJECT_DIR$/.idea/modules/second-selenium-project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/second-selenium-project_main.iml" filepath="$PROJECT_DIR$/.idea/modules/second-selenium-project_main.iml" group="second-selenium-project" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/second-selenium-project_test.iml" filepath="$PROJECT_DIR$/.idea/modules/second-selenium-project_test.iml" group="second-selenium-project" />
     </modules>
   </component>
 </project>

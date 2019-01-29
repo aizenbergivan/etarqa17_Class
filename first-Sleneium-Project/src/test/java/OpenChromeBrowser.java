@@ -18,13 +18,28 @@ public class OpenChromeBrowser {
 
   @Test
   public void chromeBrowserTest(){
+    openSite();
+    typeInSearchBar("selenium");
+
+
+  }
+
+  @Test
+  public void chromeBrowserTest2(){
+    openSite();
+    typeInSearchBar("java");
+
+
+  }
+
+  public void openSite() {
     wd.get("http://google.com");
-    //typeInSearchBar
+  }
+
+  public void typeInSearchBar(String text) {
     wd.findElement(By.name("q")).click();
     wd.findElement(By.name("q")).clear();
-    wd.findElement(By.name("q")).sendKeys("selenium");
-
-
+    wd.findElement(By.name("q")).sendKeys(text);
   }
 
   @AfterClass
