@@ -1,84 +1,20 @@
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
-
-import java.util.concurrent.TimeUnit;
+import org.testng.annotations.BeforeSuite;
 
 public class TestBase {
-  WebDriver wd;
 
-  @BeforeClass
-  public void setUp(){
-    wd= new ChromeDriver();
-    wd.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-    wd.manage().window().maximize();
-    openSite("https://trello.com");
+  protected static ApplicationManager app = new ApplicationManager();
 
+  @BeforeSuite
+  public void setUp() {
+    app.start();
   }
 
-  @AfterClass
+  @AfterSuite
   public void tearDown() {
-   wd.quit();
+    app.stop();
   }
 
-  protected void clickOnLoginButton() {
-    click(By.className("header-button-secondary"));
-  }
-
-  protected void confirmLogin() {
-    click(By.cssSelector("#login"));
-
-
-  }
-
-  protected void fillLoginForm() {
-    wd.findElement(By.cssSelector("input[type=email]")).click();
-    wd.findElement(By.cssSelector("input[type=email]")).clear();
-    wd.findElement(By.cssSelector("input[type=email]")).sendKeys("elena.telran@yahoo.com");
-
-
-
-    wd.findElement(By.cssSelector("input[type=password]")).click();
-    wd.findElement(By.cssSelector("input[type=password]")).clear();
-    wd.findElement(By.cssSelector("input[type=password]")).sendKeys("12345.com");
-  }
-
-  public void openSite(String url) {
-    wd.get(url);
-  }
-
-  public  void login(){
-    clickOnLoginButton();
-    fillLoginForm();
-    confirmLogin();
-  }
-
-  public boolean isUserLoggedIn() {
-    return isElementPresent(By.cssSelector("img.member-avatar"));
-
-  }
-
-  private boolean isElementPresent(By by) {
-    try {
-      wd.findElement(by);
-      return true;
-    } catch (NoSuchElementException e) {
-      return false;
-    }
-  }
-
-  protected void clickOnAvatar() {
-    click(By.xpath("//span[@class='member']"));
-  }
-
-  private void click(By locator) {
-    wd.findElement(locator).click();
-  }
-
-  protected void clickOnLogOutButton() {
-    click(By.cssSelector("a.js-logout"));
-  }
 }
