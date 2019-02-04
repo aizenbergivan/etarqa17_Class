@@ -25,11 +25,12 @@ public class TestBase {
   }
 
   protected void clickOnLoginButton() {
-    wd.findElement(By.className("header-button-secondary")).click();
+    click(By.className("header-button-secondary"));
   }
 
   protected void confirmLogin() {
-    wd.findElement(By.cssSelector("#login")).click();
+    click(By.cssSelector("#login"));
+
 
   }
 
@@ -70,7 +71,7 @@ public class TestBase {
   }
 
   protected void clickOnAvatar() {
-    click(By.cssSelector("img.member-avatar"));
+    click(By.xpath("//span[@class='member']"));
   }
 
   private void click(By locator) {

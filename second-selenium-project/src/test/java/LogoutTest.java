@@ -16,7 +16,8 @@ public class LogoutTest extends  TestBase {
 //  }
 
   @Test
-  public void testLogout(){
+  public void testLogout() throws InterruptedException {
+    Thread.sleep(3000);
 clickOnAvatar();
 clickOnLogOutButton();
 
