@@ -11,9 +11,9 @@ public class TeamCreationTest extends TestBase {
 
   @Test
   public  void teamCreationFromLeftNavMenu(){
-    app.clickOnCreateTeamButtonOnNavMenu();
-    app.fillTeamCreationForm("new Team Lena", "hgjhgjhgjgjg");
-    app.submitTeamCreationForm();
+    app.getTeamHelper().clickOnCreateTeamButtonOnNavMenu();
+    app.getTeamHelper().fillTeamCreationForm("new Team Lena", "hgjhgjhgjgjg");
+    app.getTeamHelper().submitTeamCreationForm();
   }
 
 
