@@ -11,7 +11,7 @@ public void ensurePreconditions() {
   @Test
   public void testLogIn() {
     app.clickOnLoginButton();
-    app.fillLoginForm();
+    app.fillLoginForm("elena.telran@yahoo.com", "12345.com");
     app.confirmLogin();
   }
 

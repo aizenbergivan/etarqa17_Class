@@ -12,19 +12,19 @@ public class BoardCreationTest extends TestBase {
   @Test
   public void testBoardCreationFromBody() {
 
-    app.clickTheCreateNewBoardOnTheEndOfList();
+    app.getBoardHelper().clickTheCreateNewBoardOnTheEndOfList();
 
-    app.addBoardTitle("newBoard" + System.currentTimeMillis());
-    app.clickTheCreateButton();
+    app.getBoardHelper().addBoardTitle("newBoard" + System.currentTimeMillis());
+    app.getBoardHelper().clickTheCreateButton();
     app.returnToPreviousPage();
   }
 
   @Test
   public void testBoardCreationFromHeader() {
     app.clickOnPlusButtonOnHeader();
-    app.selectCreateBoard();
-    app.addBoardTitle("newBoard" + System.currentTimeMillis());
-    app.clickTheCreateButton();
+    app.getBoardHelper().selectCreateBoard();
+    app.getBoardHelper().addBoardTitle("newBoard" + System.currentTimeMillis());
+    app.getBoardHelper().clickTheCreateButton();
     app.returnToPreviousPage();
 
   }
