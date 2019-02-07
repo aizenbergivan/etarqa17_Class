@@ -1,6 +1,7 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
@@ -85,5 +86,38 @@ public class ApplicationManager {
 
   public void submitTeamCreationForm() {
     click(By.xpath("//*[@value='Create']"));
+  }
+
+  public void logout() {
+    clickOnAvatar();
+   clickOnLogOutButton();
+
+  }
+
+  public void clickTheCreateNewBoardOnTheEndOfList() {
+    WebElement personalBoards = wd.findElement(By.xpath("//*[@class='icon-lg icon-member']/../../.."));
+    int boardsCount = personalBoards.findElements(By.xpath(".//*[@class='boards-page-board-section-list-item']")).size();
+   personalBoards.findElement(By.xpath(".//*[@class='boards-page-board-section-list-item']["+(boardsCount)+"]")).click();
+
+  }
+
+  public void addBoardTitle(String boardName) {
+    type(By.cssSelector("input.subtle-input"), boardName);
+  }
+
+  public void clickTheCreateButton() {
+    click(By.cssSelector("[type=submit]"));
+  }
+
+  public void returnToPreviousPage() {
+    wd.navigate().back();
+  }
+
+  public void clickOnPlusButtonOnHeader() {
+    click(By.cssSelector("div.header-user .icon-add"));
+  }
+
+  public void selectCreateBoard() {
+    click(By.cssSelector(".js-new-board"));
   }
 }
