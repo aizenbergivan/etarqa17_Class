@@ -1,7 +1,8 @@
+package manager;
+
+import model.Team;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-import static jdk.nashorn.internal.objects.NativeJava.type;
 
 public class TeamHelper extends HelperBase{
   private WebDriver wd;
@@ -15,9 +16,9 @@ public class TeamHelper extends HelperBase{
     click(By.cssSelector("[data-test-id='home-navigation-create-team-button']"));
   }
 
-  public void fillTeamCreationForm(String teamName, String description) {
-    type(By.id("org-display-name"), teamName);
-    type(By.id("org-desc"), description);
+  public void fillTeamCreationForm(Team team) {
+    type(By.id("org-display-name"), team.getTeamName());
+    type(By.id("org-desc"), team.getDescription());
   }
 
   public void submitTeamCreationForm() {

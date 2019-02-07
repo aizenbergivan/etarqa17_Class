@@ -1,11 +1,13 @@
+package tests;
+
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class BoardCreationTest extends TestBase {
   @BeforeMethod
   public void ensurePreconditions() {
-    if (!app.isUserLoggedIn()) {
-      app.login();
+    if (!app.getSessionHelper().isUserLoggedIn()) {
+      app.getSessionHelper().login();
     }
   }
 
