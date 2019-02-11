@@ -10,7 +10,7 @@ public class SessionHelper extends  HelperBase{
   }
 
   public void clickOnLoginButton() {
-    click(By.className("header-button-secondary"));
+    click(By.cssSelector("[href='/login?returnUrl=%2F']"));
   }
 
   public void confirmLogin() {

@@ -18,6 +18,13 @@ public class BoardHelper extends  HelperBase {
 
   }
 
+  public int PersonalBoardsCount(){
+    WebElement personalBoards =
+            wd.findElement(By.xpath("//*[@class='icon-lg icon-member']/../../.."));
+    return
+            personalBoards.findElements(By.xpath(".//*[@class='boards-page-board-section-list-item']")).size()-1;
+  }
+
   public void addBoardTitle(String boardName) {
     type(By.cssSelector("input.subtle-input"), boardName);
   }
